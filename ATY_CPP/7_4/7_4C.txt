@@ -1,0 +1,57 @@
+#include <string>
+#include <iostream>
+using namespace std;
+
+class people
+{
+public:
+	char name[5];
+	int num;
+	char sex;	//'b'&'g'
+	int id;
+	int year,month,day;
+	void getpeople(char name1[5],int num1,char sex1,int id1,int yy,int mm,int dd)
+	{
+		cout<<"Name:";cin>>name1;cout<"\nNumber:";cin>>num1;cout<<"\nSex:";cin>>sex1;cout<<"\nId:";cin>>id1;cout<<"\nBirthday(yy mm dd):";cin>>yy>>mm>>dd;
+		name=name1;num=num1;sex=sex1;id=id1;year=yy;maonth=mm;day=dd;
+	}
+};
+
+class student:virtual public people
+{
+	char classNO[7];
+	void getstudent(char NO[7]){cout<<"\nClassNumber:";cin>>NO;classNO=NO;}
+};
+
+class teacher:virtual public people
+{
+	char principalship[11];
+	char department[21];
+	void getteacher(char prin[11],char depart[21]){cout<<"\nPrincipalship:";cin>>prin;cou<<"\nDepartment:";cin>>depart;principalship=prin;department=depart;}
+};
+
+class graduate:virtual public student
+{
+	char subject[21];
+	teacher adviser;
+	void getgraduate(char sub[21]){cout<<"\nSubject:";cin>>sub;subject=sub;}
+};
+
+class TA:public graduate,public teacher
+{
+public:
+	void showTA()
+	{
+		cout<<"\nName:"<<name<<"\nNumber:"<<num<<"\nSex:"<<sex<<"\nId:"<<id<<"\nBirthday:"<<year<<month<<day<<"\nClassNumber:"<<classNO<<"\nPrincipalship:"<<principalship<<"\nDepartment:"<<department<<"\nSubject:"<<subject<<endl;
+	}
+};
+
+int main()
+{
+	TA ta1;
+	ta1.getpeople
+
+
+
+	ta1.showTA();
+}
